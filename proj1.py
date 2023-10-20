@@ -121,9 +121,11 @@ if __name__ == "__main__":
                     class_="CurrentConditions--tempValue--MHmYY").get_text()
                 result2 = soup.find(
                     class_="CurrentConditions--phraseValue--mZC_p").get_text()
-                speak(f"Current temperature is {result1} and weather is {result2}")
+                speak(
+                    f"Current temperature is {result1} and weather is {result2}")
                 # speak(result1)
-                print(f"Current temperature is {result1} and weather is {result2}")
+                print(
+                    f"Current temperature is {result1} and weather is {result2}")
                 a = int(result1[:-1])
                 if a > 35:
                     print(
@@ -171,7 +173,7 @@ if __name__ == "__main__":
 
         if exists(["play movie"]):
             try:
-                if('movie_path.txt'):
+                if ('movie_path.txt'):
                     with open('movie_path.txt', 'r') as f:
                         b = f.read()
                     import os
@@ -342,7 +344,7 @@ if __name__ == "__main__":
 
         if exists(["play some music", "play music"]):
             try:
-                if('music_path.txt'):
+                if ('music_path.txt'):
                     with open('music_path.txt', 'r') as f:
                         b = f.read()
                     from playsound import playsound
@@ -433,7 +435,7 @@ if __name__ == "__main__":
             webbrowser.get().open(url)
             speak("You must be somewhere near here, as per Google maps")
             continue
-        
+
         if exists(["play song from youtube", 'song from youtube']):
             import pywhatkit
             song = 'song'
@@ -483,7 +485,7 @@ if __name__ == "__main__":
             i = 1
             return_value, image = camera.read()
             cv2.imwrite(f"Image {a}.jpg", image)
-            del(camera)
+            del (camera)
 
         elif 'open google' in query:
             url = "https://www.google.co.in"
@@ -510,7 +512,10 @@ if __name__ == "__main__":
             import Time_Scheduler
 
         elif 'open timer' in query:
-            import Time_Stoper
+            os.system('open dist/Time_Stoper')
+
+        elif 'open timer' in query:
+            os.system('open dist/battery')
 
         elif 'open book reader' in query:
             import pdf_reader
